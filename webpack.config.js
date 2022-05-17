@@ -10,21 +10,21 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        //clean: true,
+        clean: true,
     },
-    optimization: {
-        runtimeChunk: 'single',
-    },
+    // optimization: {
+    //     runtimeChunk: 'single',
+    // },
     module: {
         rules: [
             {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                test: /\.(css|sass|scss)$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
-            // {
-            //     test: /\.(png|svg|jpg|jpeg|gif)$/i,
-            //     type: 'asset/resource',
-            // },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ],
     },
 };

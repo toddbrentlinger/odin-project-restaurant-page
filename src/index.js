@@ -1,15 +1,11 @@
-//import initialPageLoad from './initial-page-load.js';
-import './style.css';
+import initialPageLoad from './initial-page-load.js';
+//import AnimatedLogoComponent from './animated-logo.js';
+import './style.scss';
 
 function component() {
-    const element = document.createElement('div');
-
-    //element.classList.add('hello');
-    element.innerHTML = 'Hello World';
-
-    //element.appendChild(initialPageLoad());
-
-    return element;
+    //return AnimatedLogoComponent().render();
+    return initialPageLoad();
 }
 
-document.body.appendChild(component());
+//document.body.appendChild(component());
+initialPageLoad();
