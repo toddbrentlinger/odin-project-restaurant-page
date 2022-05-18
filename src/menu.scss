@@ -1,0 +1,51 @@
+.menu-page {
+    margin: 1rem auto;
+    padding: 1em;
+    width: 80%;
+    background-color: rgb(138, 63, 6);
+    outline: 6px solid red;
+    border: 6px solid black;
+    border-radius: 1em;
+    // Grid
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    h2 {
+        text-transform: capitalize;
+    }
+}
+
+#pizza-type-container {
+
+}
+
+.pizza-item {
+    border: 2px solid black;
+    // Grid
+    display: grid;
+    grid-template-columns: 2em 1fr auto;
+    grid-template-areas: 
+        "number name prices"
+        "ingredients ingredients ingredients";
+
+    .pizza-item-number {
+        outline: 2px solid orange;
+        grid-area: number;
+    }
+
+    .pizza-item-name {
+        outline: 2px solid red;
+        grid-area: name;
+    }
+
+    .pizza-item-prices {
+        outline: 2px solid green;
+        grid-area: prices;
+    }
+
+    .pizza-item-ingredients {
+        outline: 2px solid blue;
+        grid-area: ingredients;
+    }
+}

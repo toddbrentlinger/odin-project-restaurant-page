@@ -1,0 +1,190 @@
+{
+    "pizza": [
+        {
+            "name": "Delicious Manzanitta",
+            "ingredients": "Olive oil sauce, mozzarella, corralitos sausage, cooked with cinnamon apples, bacon, fresh garlic, gorgonzola cheese.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Green Gardens",
+            "ingredients": "Pesto sauce, mozzarella, spinach, artichokes, feta cheese, fresh tomatoes after cooking.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "The Greek",
+            "ingredients": "Candied onion base, mozzarella, artichokes, roasted red peppers, greek olives, goat cheese, vegetable seasoning.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Veggie Mia",
+            "ingredients": "Red sauce, mozzarella, zucchini, mushroom, green peppers, red onions, tomatoes, black olives, vegetable seasoning.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Pizza Caliente",
+            "ingredients": "Red sauce, mozzarella, tomatoes, red onions, italian sausage, chorizo, jalapeño, (choice of habanero peppers).",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Coucere BBQ Chicken",
+            "ingredients": "BBQ sauce, mozzarella, grilled chicken, red onion, gouda cheese, cilantro after cooking.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Chicken Cilantro & Garlic",
+            "ingredients": "Creamy ranch sauce, grilled chicken, candied onions, fresh garlic, cilantro (dude's special add: bacon, jalapeños).",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Carnosso (All Meat)",
+            "ingredients": "Red sauce, mozzarella, pepperoni, ham, salami, linguica, bacon, corralitos sausage, italian sausage, fresh garlic.",
+            "prices": [17.99, 23.99, 30.99, 35.99]
+        },
+        {
+            "name": "Honolulu",
+            "ingredients": "Red sauce, mozzarella, ham, pineapple.",
+            "prices": [14.99, 20.99, 26.99, 32.99]
+        },
+        {
+            "name": "Dude's Pizza Special",
+            "ingredients": "Red sauce, mozzarella, ham, pineapple, bacon, jalapeños.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Margareth",
+            "ingredients": "Red sauce, mozzarella, sliced tomatoes, fresh garlic, parmesan cheese, pesto after cooking.",
+            "prices": [14.99, 20.99, 26.99, 32.99]
+        },
+        {
+            "name": "Peperachi Combo",
+            "ingredients": "Red sauce, mozzarella, pepperoni, ham, mushrooms, green peppers, italian sausage.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Trevor's Combo",
+            "ingredients": "Red sauce, mozzarella, pepperoni, mushroom, green peppers, red onion, fresh tomatoes, italian sausage.",
+            "prices": [13.99, 18.99, 23.99, 29.99]
+        },
+        {
+            "name": "Roma-Cheezy (6 Times Cheese)",
+            "ingredients": "Olive oil sauce, mozzarella, feta cheese, gorgonzola cheese, gouda cheese, goat cheese, parmesan cheese, fresh bruschetta after cooking.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Portobello Santa Cruz",
+            "ingredients": "Pesto sauce, mozzarella, portobello mushroom, green olives, feta cheese.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Pesto Chicken",
+            "ingredients": "Pesto sauce, mozzarella, spinach, grilled chicken, tomatoes, fresh garlic, feta cheese.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        },
+        {
+            "name": "Asian Peanut Sauce",
+            "ingredients": "Peanut sauce, mozzarella, grilled chicken, carrots, red onions, peanuts, cilantro after cooking.",
+            "prices": [16.99, 22.99, 28.99, 34.99]
+        }
+    ],
+    "pizzaSizes": [
+        {
+            "name": "Small",
+            "size": 10,
+            "price": 12.75,
+            "priceAddPerTopping": 1.10
+        },
+        {
+            "name": "Medium",
+            "size": 12,
+            "price": 17.95,
+            "priceAddPerTopping": 1.45
+        },
+        {
+            "name": "Large",
+            "size": 14,
+            "price": 20.75,
+            "priceAddPerTopping": 1.85
+        },
+        {
+            "name": "XLarge",
+            "size": 18,
+            "price": 25.25,
+            "priceAddPerTopping": 2.25
+        }
+    ],
+    "createOwnPizza": {
+        "sauces": "Fresh tomatoe sauce, pesto sauce, creamy ranch sauce, garlic olive oil sauce, asian peanut sauce, BBQ sauce.",
+        "meats": "Pepperoni, salami, linguica, ham, bacon, italian sausage, corralitos sausage, chicken, chorizo.",
+        "vegetables": "Mushrooms, portobello mushrooms, onions, candied onions, tomatoes, green bell peppers, roasted red peppers, artichokes, black olives, green olives, greek olives, carrots, cilantro, fresh garlic, pineapple, zucchini, pine nuts, peanuts, peperoncini peppers, habanero peppers.",
+        "cheeses": "Feta cheese, gouda cheese, goat cheese, gorgonzola cheese, parmesan cheese, romano cheese."
+    },
+    "salads": [
+        {
+            "name": "Italian",
+            "ingredients": "Romaine lettuce, parmesan, salami, capicola ham, pepperoni, croutons, italian dressing.",
+            "price": 10.00
+        },
+        {
+            "name": "Roma Salad",
+            "ingredients": "Romaine lettuce, parmesan, crusted croutons, caesar dressing.",
+            "price": 9.00
+        },
+        {
+            "name": "The Gardens",
+            "ingredients": "Romaine lettuce, tomatoes, onions, cucumbers, black olives, pepperoncini peppers, balsamic vinegar.",
+            "price": 9.00
+        }
+    ],
+    "appetizers": [
+        {
+            "name": "Chicken wings (BBQ or Buffalo) (6 piece)",
+            "price": 10.00
+        },
+        {
+            "name": "Mozzarella sticks (6 piece)",
+            "price": 7.99
+        },
+        {
+            "name": "Garlic bread sticks with cheese (10\")",
+            "price": 9.99
+        },
+        {
+            "name": "Italian Calzone",
+            "price": 16.99
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Chocolate cake",
+            "price": 3.75
+        }
+    ],
+    "beverages": [
+        {
+            "name": "Can",
+            "price": 2.00
+        },
+        {
+            "name": "Bottles",
+            "price": 3.00
+        }
+    ],
+    "slices": [
+        {
+            "name": "Cheese",
+            "price": 5.00
+        },
+        {
+            "name": "Pepperoni",
+            "price": 5.00
+        },
+        {
+            "name": "Combination",
+            "price": 5.00
+        }
+    ],
+    "sides": {
+        "names": "Ranch, jalapeños, anchovies, marinara sauce, buffalo sauce, BBQ sauce, pesto basil sauce, garlic olive oil.",
+        "price": 1.65
+    }
+}
