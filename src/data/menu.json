@@ -118,73 +118,77 @@
         "vegetables": "Mushrooms, portobello mushrooms, onions, candied onions, tomatoes, green bell peppers, roasted red peppers, artichokes, black olives, green olives, greek olives, carrots, cilantro, fresh garlic, pineapple, zucchini, pine nuts, peanuts, peperoncini peppers, habanero peppers.",
         "cheeses": "Feta cheese, gouda cheese, goat cheese, gorgonzola cheese, parmesan cheese, romano cheese."
     },
-    "salads": [
-        {
-            "name": "Italian",
-            "ingredients": "Romaine lettuce, parmesan, salami, capicola ham, pepperoni, croutons, italian dressing.",
-            "price": 10.00
-        },
-        {
-            "name": "Roma Salad",
-            "ingredients": "Romaine lettuce, parmesan, crusted croutons, caesar dressing.",
-            "price": 9.00
-        },
-        {
-            "name": "The Gardens",
-            "ingredients": "Romaine lettuce, tomatoes, onions, cucumbers, black olives, pepperoncini peppers, balsamic vinegar.",
-            "price": 9.00
-        }
-    ],
-    "appetizers": [
-        {
-            "name": "Chicken wings (BBQ or Buffalo) (6 piece)",
-            "price": 10.00
-        },
-        {
-            "name": "Mozzarella sticks (6 piece)",
-            "price": 7.99
-        },
-        {
-            "name": "Garlic bread sticks with cheese (10\")",
-            "price": 9.99
-        },
-        {
-            "name": "Italian Calzone",
-            "price": 16.99
-        }
-    ],
-    "desserts": [
-        {
-            "name": "Chocolate cake",
-            "price": 3.75
-        }
-    ],
-    "beverages": [
-        {
-            "name": "Can",
-            "price": 2.00
-        },
-        {
-            "name": "Bottles",
-            "price": 3.00
-        }
-    ],
-    "slices": [
-        {
-            "name": "Cheese",
-            "price": 5.00
-        },
-        {
-            "name": "Pepperoni",
-            "price": 5.00
-        },
-        {
-            "name": "Combination",
-            "price": 5.00
-        }
-    ],
-    "sides": {
-        "names": "Ranch, jalapeños, anchovies, marinara sauce, buffalo sauce, BBQ sauce, pesto basil sauce, garlic olive oil.",
-        "price": 1.65
+    "otherItems": {
+        "salads": [
+            {
+                "name": "Italian",
+                "ingredients": "Romaine lettuce, parmesan, salami, capicola ham, pepperoni, croutons, italian dressing.",
+                "price": 10.00
+            },
+            {
+                "name": "Roma Salad",
+                "ingredients": "Romaine lettuce, parmesan, crusted croutons, caesar dressing.",
+                "price": 9.00
+            },
+            {
+                "name": "The Gardens",
+                "ingredients": "Romaine lettuce, tomatoes, onions, cucumbers, black olives, pepperoncini peppers, balsamic vinegar.",
+                "price": 9.00
+            }
+        ],
+        "appetizers": [
+            {
+                "name": "Chicken wings (BBQ or Buffalo) (6 piece)",
+                "price": 10.00
+            },
+            {
+                "name": "Mozzarella sticks (6 piece)",
+                "price": 7.99
+            },
+            {
+                "name": "Garlic bread sticks with cheese (10\")",
+                "price": 9.99
+            },
+            {
+                "name": "Italian Calzone",
+                "price": 16.99
+            }
+        ],
+        "desserts": [
+            {
+                "name": "Chocolate cake",
+                "price": 3.75
+            }
+        ],
+        "beverages": [
+            {
+                "name": "Can",
+                "price": 2.00
+            },
+            {
+                "name": "Bottles",
+                "price": 3.00
+            }
+        ],
+        "slices": [
+            {
+                "name": "Cheese",
+                "price": 5.00
+            },
+            {
+                "name": "Pepperoni",
+                "price": 5.00
+            },
+            {
+                "name": "Combination",
+                "price": 5.00
+            }
+        ],
+        "sides": [
+            {
+                "name": "Ranch, jalapeños, anchovies, marinara sauce, buffalo sauce, BBQ sauce, pesto basil sauce, garlic olive oil.",
+                "price": 1.65
+            }
+        ]
     }
 }
