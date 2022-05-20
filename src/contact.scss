@@ -1,0 +1,72 @@
+.location-container {
+    text-align: center;
+}
+
+#pizza-board-container {
+    flex: 1;
+    padding: 5% 15%;
+    position: relative;
+    // Grid
+    display: grid;
+    place-items: center;
+    // Transform
+    transform: translateX(-150vw);
+
+    &.has-loaded {
+        // Animation
+        animation-name: slide-board-in-with-item;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+
+        &::before {
+            // Animation
+            animation-name: slide-board-out-empty;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+        }
+    }
+
+    &::before {
+        z-index: 10;
+        // Position
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        aspect-ratio: 2.1;
+        // Background
+        background-image: url('./img/Upcycled_Pizza_Peel_alpha_rotated.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        // Transform
+        transform: translateX(-25%);
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+    }
+}
+
+@keyframes slide-board-in-with-item {
+    0% {
+        transform: translateX(-150vw);
+    }
+    100% {
+        transform: translateX(0);
+    } 
+}
+
+@keyframes slide-board-out-empty {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(-150vw);
+    } 
+}
+
