@@ -4,6 +4,7 @@ import './menu.scss';
 import MenuLogo from './img/titulo_menu.png';
 import Logo from './img/logo.png';
 import CreateOwnPizzaLogo from './img/titulo_menu2.png';
+import menuPDF from './data/menu.pdf';
 
 export default function Menu() {
     let pageSelected = 1;
@@ -255,19 +256,21 @@ export default function Menu() {
         const btnContainer = createElement('div', {id: 'menu-page-btn-container'});
 
         // Page 1
-        let btn = btnContainer.appendChild(createElement('button', {}, 'Page 1'));
-        btn.addEventListener('click', () => {
+        let btn = btnContainer.appendChild(createElement('a', {'href': ''}, 'Page 1'));
+        btn.addEventListener('click', e => {
+            e.preventDefault();
             pageSelected = 1;
             _updateMenu();
         }, false);
         // Page 2
-        btn = btnContainer.appendChild(createElement('button', {}, 'Page 2'));
-        btn.addEventListener('click', () => {
+        btn = btnContainer.appendChild(createElement('a', {href: ''}, 'Page 2'));
+        btn.addEventListener('click', e => {
+            e.preventDefault();
             pageSelected = 2;
             _updateMenu();
         }, false);
         // PDF
-        btn = btnContainer.appendChild(createElement('button', {}, 'PDF'));
+        btn = btnContainer.appendChild(createElement('a', {href: menuPDF, target: '_blank'}, 'PDF'));
         btn.addEventListener('click', () => {
             
         }, false);
