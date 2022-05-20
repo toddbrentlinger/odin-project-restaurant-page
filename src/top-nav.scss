@@ -1,0 +1,52 @@
+#topnav {
+    --growth-ratio: 1.2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .nav-link-container {
+        a {
+            outline: 2px solid var(--base-white);
+            padding: 0.5em 1em;
+            display: block;
+            // Transition
+            transition: transform 500ms ease;
+            transform: scale(calc(1 / var(--growth-ratio)));
+            // Font Size adjusted after scaled down by transform
+            font-size: calc(var(--growth-ratio) * 100%);
+    
+            span {
+                display: block;
+                position: relative;
+                line-height: normal;
+    
+                &::before {
+                    content: "";
+                    background-color: var(--base-white);
+                    // Absolute Position
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 2px;
+                    // Transition
+                    transition: all 500ms ease;
+                    // Transition Values
+                    width: 0%;
+                    opacity: 0;
+                }
+            }
+    
+            &:hover, &:focus, &:active, &.active {
+                transform: scale(1);
+    
+                span {
+                    &::before {
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

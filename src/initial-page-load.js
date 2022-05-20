@@ -1,8 +1,10 @@
-//import AnimatedLogoComponent from './animated-logo.js';
+import './meyer-reset.scss';
+import './initial-page-load.scss';
+
 import TopNav from './top-nav.js';
 import Home from './home.js';
+import Footer from './footer.js';
 import { createElement } from './utilities.js';
-import './initial-page-load.scss';
 
 export default function initialPageLoad() {
     console.log('Initial Page Load');
@@ -27,10 +29,11 @@ export default function initialPageLoad() {
     // tempElement.appendChild(AnimatedLogoComponent().render());
     
     // Footer
-    tempElement = document.createElement('footer');
-    contentElement.appendChild(tempElement);
-    // Footer - Text
-    tempElement.appendChild(createElement('p', {}, 'Gourmet Pizza...'));
-    tempElement.appendChild(createElement('p', {}, 'We use only the best ingredients: farm fresh vegetables, locally harvested, high quality mozzarella, savory locally produced meats.'));
+    contentElement.appendChild(Footer(2022).render());
+    // tempElement = document.createElement('footer');
+    // contentElement.appendChild(tempElement);
+    // // Footer - Text
+    // tempElement.appendChild(createElement('p', {}, 'Gourmet Pizza...'));
+    // tempElement.appendChild(createElement('p', {}, 'We use only the best ingredients: farm fresh vegetables, locally harvested, high quality mozzarella, savory locally produced meats.'));
 
 }

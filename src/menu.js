@@ -256,24 +256,26 @@ export default function Menu() {
         const btnContainer = createElement('div', {id: 'menu-page-btn-container'});
 
         // Page 1
-        let btn = btnContainer.appendChild(createElement('a', {'href': ''}, 'Page 1'));
+        let btn = btnContainer.appendChild(createElement('a', {'href': ''}));
         btn.addEventListener('click', e => {
             e.preventDefault();
             pageSelected = 1;
             _updateMenu();
         }, false);
+        btn.appendChild(createElement('span', {}, 'Page 1'));
+
         // Page 2
-        btn = btnContainer.appendChild(createElement('a', {href: ''}, 'Page 2'));
+        btn = btnContainer.appendChild(createElement('a', {href: ''}));
         btn.addEventListener('click', e => {
             e.preventDefault();
             pageSelected = 2;
             _updateMenu();
         }, false);
+        btn.appendChild(createElement('span', {}, 'Page 2'));
+
         // PDF
-        btn = btnContainer.appendChild(createElement('a', {href: menuPDF, target: '_blank'}, 'PDF'));
-        btn.addEventListener('click', () => {
-            
-        }, false);
+        btn = btnContainer.appendChild(createElement('a', {href: menuPDF, target: '_blank'}));
+        btn.appendChild(createElement('span', {}, 'PDF'));
 
         return btnContainer;
     };

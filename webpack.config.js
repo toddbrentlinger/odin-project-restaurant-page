@@ -10,7 +10,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true,
+        //clean: true,
     },
     // optimization: {
     //     runtimeChunk: 'single',
@@ -22,7 +22,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,
                 type: 'asset/resource',
             },
         ],

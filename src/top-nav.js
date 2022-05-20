@@ -1,14 +1,22 @@
 import { createElement } from "./utilities.js";
-import Menu from "./menu.js";
 import Home from "./home.js";
+import Gallery from "./gallery.js";
+import Menu from "./menu.js";
+import Contact from "./contact.js";
+import './top-nav.scss';
 
 export default function TopNav() {
-    const _createNavAnchor = function(textContent, href = '') {
+    const _createNavAnchor = function(textContent, href = '', bIsActiveTab = false) {
         const anchorElement = createElement('a', {'href': href}, createElement('span', {}, textContent));
+
+        if (bIsActiveTab)
+            anchorElement.classList.add('active');
+        
         anchorElement.addEventListener('click', e => {
             e.preventDefault();
             _handleNavItemClick(e, textContent.toLowerCase());
         }, false);
+
         return createElement('div', {'class': 'nav-link-container'}, anchorElement);
     };
 
@@ -37,6 +45,7 @@ export default function TopNav() {
                 _removeActiveClassFromTabs();
                 e.currentTarget.classList.add('active');
                 _clearMain();
+                document.querySelector('main').replaceWith(Gallery().render());
                 break;
             case 'menu':
                 _removeActiveClassFromTabs();
@@ -48,6 +57,7 @@ export default function TopNav() {
                 _removeActiveClassFromTabs();
                 e.currentTarget.classList.add('active');
                 _clearMain();
+                document.querySelector('main').replaceWith(Contact().render());
                 break;
             default:
         }
@@ -55,7 +65,7 @@ export default function TopNav() {
     
     const render = function() {
         const tabElements = [
-            _createNavAnchor('Home'),
+            _createNavAnchor('Home', '', true),
             _createNavAnchor('Gallery'),
             _createNavAnchor('Menu'),
             _createNavAnchor('Contact'),
