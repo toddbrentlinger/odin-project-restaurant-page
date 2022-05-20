@@ -1,0 +1,83 @@
+#animated-logo {
+    position: relative;
+    height: 406px;
+    width: 606px;
+
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .animated-logo-back {
+        --logo-back-height-percentage: 70%;
+
+        height: var(--logo-back-height-percentage);
+        overflow: hidden;
+
+        > * {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            // Animation
+            //animation-name: logo-slide;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        }
+        .logo-image-sign {
+            // Animation
+            animation-name: logo-image-sign-slide;
+        }
+        .logo-trees {
+            // Animation
+            animation-name: logo-trees-slide;
+        }
+        .logo-rooster {
+            // Animation
+            animation-name: logo-rooster-slide;
+        }
+    }
+
+    .logo-text-sign {
+        bottom: 0;
+    }
+}
+
+@keyframes logo-slide {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes logo-image-sign-slide {
+    0% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes logo-trees-slide {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes logo-rooster-slide {
+    0% {
+        transform: translateY(200%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
