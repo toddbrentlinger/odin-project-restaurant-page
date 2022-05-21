@@ -1,6 +1,5 @@
 #gallery {
     width: 80%;
-    margin: 1rem 0;
     // Grid
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -36,13 +35,16 @@
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    //overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
     // Grid
     display: grid;
-    grid-template-rows: auto 1fr;
-    align-items: center;
+    grid-template-columns: var(--btn-width) 1fr var(--btn-width);
+    grid-template-rows: var(--btn-width) 1fr;
+    grid-template-areas: 
+        ". . close"
+        "prev content next";
 
     &:not(.hide) {
         #img-modal-content {
@@ -56,31 +58,35 @@
         display: none;
     }
 
-    #img-modal-header {
-        // Flex
-        display: flex;
-        justify-content: flex-end;
-    }
-
     #img-modal-close {
+        grid-area: close;
         font-size: 3rem;
         height: var(--btn-width);
     }
 
-    #img-modal-main {
-        position: relative;
-    }
+    #img-modal-content-container {
+        grid-area: content;
+        // Background
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
 
-    #img-modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        height: auto;
-    }
+        #img-modal-content {
+            // margin: auto;
+            // display: block;
+            // width: 80%;
+            // max-width: 700px;
+            // height: auto;
 
-    #img-modal-caption {
-        text-align: center;
+            // max-width: 100%;
+            // max-height: 100%;
+            // display: block;
+            // object-fit: contain;
+
+            object-fit: cover;
+            width: 100%;
+            max-height: 100%;
+        }
     }
 
     #img-modal-close, #img-modal-prev, #img-modal-next {
@@ -99,19 +105,13 @@
     }
 
     #img-modal-prev {
+        grid-area: prev;
         font-size: 6rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
     }
 
     #img-modal-next {
+        grid-area: next;
         font-size: 6rem;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
     }
 }
 

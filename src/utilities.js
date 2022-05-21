@@ -17,3 +17,8 @@ export function createElement(type, props = {}, ...children) {
 
     return element;
 }
+
+function getYelpGalleryImgIds() {
+    return Array.from(document.querySelectorAll('.photos [data-analytics-label=biz-photo]'))
+	    .map(photo => photo.href.match(/(?<==).+$/)[0]);
+}
