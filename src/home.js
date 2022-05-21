@@ -10,7 +10,7 @@ export default function Home() {
         element.appendChild(AnimatedLogoComponent().render());
 
         // Tagline
-        element.appendChild(createElement('div', {id: 'tagline'}, 
+        element.appendChild(createElement('div', {id: 'tagline', 'class': 'white-text-shadow'}, 
             createElement('p', {}, 'Gourmet Pizza...'),
             createElement('p', {}, 'We use only the best ingredients: '),
             createElement('p', {}, 'farm fresh vegetables, locally harvested, high quality mozzarella, savory locally produced meats.')

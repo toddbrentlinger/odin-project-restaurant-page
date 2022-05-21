@@ -35,13 +35,13 @@ export default function Contact() {
         const element = document.createElement('main');
 
         // Location
-        element.appendChild(createElement('div', {'class': 'location-container'},
+        element.appendChild(createElement('div', {'class': 'location-container white-text-shadow'},
             createElement('p', {}, 'Our Location'),
             createElement('p', {}, '1061 S. Green Valley Rd. Watsonville CA.')
         ));
 
         // Phone
-        element.appendChild(createElement('p', {}, 'Phone: (831) 722-7220'));
+        element.appendChild(createElement('p', {'class': 'phone-number white-text-shadow'}, 'Phone: (831) 722-7220'));
 
         // Pizza Board
         const pizzaBoardContainer = element.appendChild(_createPizzaBoardElement());

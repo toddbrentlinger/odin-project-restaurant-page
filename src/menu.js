@@ -107,7 +107,7 @@ export default function Menu() {
     };
 
     const _createFirstPage = function() {
-        const menuPage = createElement('div', {'class': 'menu-page'});
+        const menuPage = createElement('div', {'class': 'menu-page-single'});
 
         // Menu Logo
         menuPage.appendChild(createElement('img', {'src': MenuLogo, 'alt': 'Menu logo.', 'class': 'menu-logo'}));
@@ -168,7 +168,7 @@ export default function Menu() {
     };
 
     const _createSecondPage = function() {
-        const menuPage = createElement('div', {'class': 'menu-page'});
+        const menuPage = createElement('div', {'class': 'menu-page-single', id: 'menu-page-2'});
 
         // Menu Logo
         menuPage.appendChild(createElement('img', {'src': MenuLogo, 'alt': 'Menu logo.', 'class': 'menu-logo'}));
@@ -262,7 +262,7 @@ export default function Menu() {
             pageSelected = 1;
             _updateMenu();
         }, false);
-        btn.appendChild(createElement('span', {}, 'Page 1'));
+        btn.appendChild(createElement('span', {'class': 'white-text-shadow'}, 'Page 1'));
 
         // Page 2
         btn = btnContainer.appendChild(createElement('a', {href: ''}));
@@ -271,17 +271,17 @@ export default function Menu() {
             pageSelected = 2;
             _updateMenu();
         }, false);
-        btn.appendChild(createElement('span', {}, 'Page 2'));
+        btn.appendChild(createElement('span', {'class': 'white-text-shadow'}, 'Page 2'));
 
         // PDF
         btn = btnContainer.appendChild(createElement('a', {href: menuPDF, target: '_blank'}));
-        btn.appendChild(createElement('span', {}, 'PDF'));
+        btn.appendChild(createElement('span', {'class': 'white-text-shadow'}, 'PDF'));
 
         return btnContainer;
     };
 
     const _updateMenu = function() {
-        const element = document.querySelector('.menu-page');
+        const element = document.querySelector('.menu-page-single');
 
         switch(pageSelected) {
             case 2:
@@ -299,13 +299,13 @@ export default function Menu() {
         element.appendChild(_createMenuPageButtons());
 
         // Menu Page
-        switch(pageSelected) {
-            case 2:
-                element.appendChild(_createSecondPage());
-                break;
-            default: // Show first page by default
-                element.appendChild(_createFirstPage());
-        }
+        // menu-page-container -> menu-pages -> menu-page
+        element.appendChild(createElement('div', {id: 'menu-page-container'}, 
+            createElement('div', {id: 'menu-pages'}, 
+                pageSelected === 2 ? _createSecondPage() : _createFirstPage(),
+                pageSelected === 2 ? _createFirstPage() : _createSecondPage()
+            )
+        ));
         
         return element;
     };

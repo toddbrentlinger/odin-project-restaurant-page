@@ -33,7 +33,7 @@ body {
 
 header {
     // Background
-    background-color: brown;
+    background-color: #280f05;
     background-image: url('./img/fondo_Cabezera.jpg');
     background-size: auto;
     background-position: bottom;
@@ -55,10 +55,12 @@ header {
 }
 
 main {
+    padding: 1rem;
     // Background
-    background-color: rgb(193, 48, 0);
-    background-image: url('./img/TexturesCom_Wall_BrickOld3A_2x1_512_albedo.jpg');
+    background-color: #925642;
+    background-image: url('./img/TexturesCom_Wall_BrickOld3A_2x1_256_albedo.jpg');
     background-position: top;
+    background-size: contain;
     // Flex
     display: flex;
     flex-direction: column;
@@ -68,7 +70,39 @@ main {
 
 // Misc
 
+.white-text-shadow {
+    text-shadow: 0px 0px 5px var(--base-black);
+}
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
+// Media Queries
+
+/* Smallest (300px and down) */
+@media only screen and (max-width: 300px) {}
+
+/* Extra small devices (phones, 300px and up) */
+@media only screen and (min-width: 300px) {
+    main {
+        background-image: url('./img/TexturesCom_Wall_BrickOld3A_2x1_512_albedo.jpg');
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    main {
+        background-image: url('./img/TexturesCom_Wall_BrickOld3A_2x1_1K_albedo.jpg');
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -3,7 +3,7 @@ import './footer.scss';
 
 export default function Footer(copyrightYear) {
     const render = function() {
-        const footer = document.createElement('footer');
+        const footer = createElement('footer', {'class': 'white-text-shadow'});
         const currYear = new Date().getFullYear();
 
         // Paragraph element as child of footer
