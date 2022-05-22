@@ -72,7 +72,8 @@ export default function Gallery() {
             'img', 
             {
                 'src': `https://s3-media0.fl.yelpcdn.com/bphoto/${yelpId}/300s.jpg`, 
-                alt: '', 
+                alt: '',
+                loading: 'lazy',
                 width: '300', 
                 height: '300'
             }

@@ -20,6 +20,11 @@
             height: auto;
             transform: scale(0.9);
             transition: transform 500ms ease;
+            // Background
+            background-image: url('./img/Pizza_Pepperoni.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
     }
 }
@@ -47,7 +52,7 @@
         "prev content next";
 
     &:not(.hide) {
-        #img-modal-content {
+        #img-modal-content-container {
             // Animation
             animation-name: zoom;
             animation-duration: 500ms;
