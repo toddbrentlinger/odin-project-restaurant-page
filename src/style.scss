@@ -58,9 +58,9 @@ main {
     padding: 1rem;
     // Background
     background-color: #925642;
-    background-image: url('./img/TexturesCom_Wall_BrickOld3A_2x1_256_albedo.jpg');
+    background-image: url('./img/TexturesCom_Wall_BrickOld3A_2x1_512.jpg');
     background-position: top;
-    background-size: contain;
+    background-size: 500px;
     // Flex
     display: flex;
     flex-direction: column;
@@ -85,18 +85,10 @@ a {
 @media only screen and (max-width: 300px) {}
 
 /* Extra small devices (phones, 300px and up) */
-@media only screen and (min-width: 300px) {
-    main {
-        background-image: url('./img/TexturesCom_Wall_BrickOld3A_2x1_512_albedo.jpg');
-    }
-}
+@media only screen and (min-width: 300px) {}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    main {
-        background-image: url('./img/TexturesCom_Wall_BrickOld3A_2x1_1K_albedo.jpg');
-    }
-}
+@media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {}
