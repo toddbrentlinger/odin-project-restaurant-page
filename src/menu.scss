@@ -4,31 +4,62 @@
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
 
-    a {
+    .menu-page-btn {
         --growth-ratio: 1.2;
 
-        display: block;
-
-        span {
+        a {
             display: block;
             padding: 0.5em 1em;
-            border: 2px solid var(--base-white);
-            font-size: calc(var(--growth-ratio) * 100%);
-            font-weight: 600;
-            // Grid
-            display: grid;
-            place-items: center;
             // Transform
             transform: scale(calc(1 / var(--growth-ratio)));
             transition: transform 500ms ease;
             // Background
-            background-image: url('./img/fondo_menu.jpg');
-        }
-
-        &:hover, &:active, &:focus {
+            background-image: url('./img/fondo_cont.jpg');
+            // Border
+            border: 2px solid var(--base-white);
+    
             span {
+                display: block;
+                position: relative;
+                line-height: normal;
+                // Font
+                font-size: calc(var(--growth-ratio) * 100%);
+                font-weight: 600;
+                // Grid
+                display: grid;
+                place-items: center;
+                // // Transform
+                // transform: scale(calc(1 / var(--growth-ratio)));
+                // transition: transform 500ms ease;
+                // // Background
+                // background-image: url('./img/fondo_cont.jpg');
+    
+                &::before {
+                    content: "";
+                    background-color: var(--base-white);
+                    // Absolute Position
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 2px;
+                    // Transition
+                    transition: all 500ms ease;
+                    // Transition Values
+                    width: 0%;
+                    opacity: 0;
+                }
+            }
+    
+            &:hover, &:active, &:focus {
                 // Transform
                 transform: scale(1);
+
+                span {
+                    &::before {
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
             }
         }
     }
@@ -36,27 +67,25 @@
 
 #menu-page-container {
     margin: 1rem auto;
-    width: 80%;
+    max-width: 150ch;
+    // width: 80%;
     perspective: 500vw;
 }
 
 #menu-pages {
     position: relative;
     transform-style: preserve-3d;
-    // Animation
-    animation-name: rotate-menu;
-    animation-duration: 6s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+    // Transition
+    transform: rotateY(0deg);
+    transition: transform 1s ease-out;
 
-@keyframes rotate-menu {
-    0%, 25% {
-        transform: rotateY(0deg);
-    }
-    75%, 100% {
+    &[data-page-displayed="2"] {
         transform: rotateY(180deg);
+    }
+
+    .pizza-item-number, h2 {
+        font-size: 110%;
+        font-weight: 600;
     }
 }
 
@@ -72,16 +101,16 @@
     backface-visibility: hidden;
     // Background
     background-color: rgb(138, 63, 6);
-    //background-image: url('./img/TexturesCom_Wood_OakVeneer2_512_albedo.jpg');
-    background-size: 50%;
+    background-image: url('./img/fondo_cont.jpg');
+    background-size: 500px;
     // Grid
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, min-content);
-    gap: 1rem;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(2, min-content);
+    //gap: 1rem;
 
     h2 {
-        text-transform: capitalize;
+        text-transform: uppercase;
     }
 
     img {
@@ -91,7 +120,23 @@
 
     .menu-logo {
         // Grid
-        grid-area: 1 / 1 / 2 / 3;
+        //grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .menu-column-container {
+        // Grid
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr));
+        column-gap: 2rem;
+    }
+
+    .menu-column:first-of-type {
+        // border-right: 2px solid var(--base-white);
+        // padding-right: 1rem;
+    }
+
+    .menu-column:last-of-type {
+        //padding-left: 1rem;
     }
 
     .menu-column {
@@ -118,16 +163,12 @@
     transform: rotateY(180deg) translateZ(10px);
 }
 
-#pizza-type-container {
-
-}
-
 .pizza-item {
     //border: 2px solid white;
     // Grid
     display: grid;
     grid-template-columns: 2em 1fr auto;
-    row-gap: 1rem;
+    gap: 1rem 0.5rem;
     grid-template-areas: 
         "number name prices"
         "ingredients ingredients ingredients";
@@ -135,13 +176,10 @@
     .pizza-item-number {
         //outline: 2px solid orange;
         color: var(--base-white);
-        font-size: larger;
-        font-weight: 700;
-        text-shadow: 0px 0px 1em var(--base-black);
         // Background
         background-image: url('./img/tomato.png');
         background-position: center;
-        background-size: cover;
+        background-size: 140%;
         background-repeat: no-repeat;
         // Grid
         grid-area: number;
@@ -171,6 +209,14 @@
         .pizza-item-price-single {
             //outline: 2px solid red;
             padding: 0 0.5em;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
 
             &:not(:last-child) {
                 border-right: 2px solid var(--base-white);
@@ -203,6 +249,13 @@
 
         .cop-price-single {
             text-align: center;
+            // Grid
+            display: grid;
+            gap: 0.3em;
+
+            .cop-price-single-size, .cop-price-single-value {
+                font-weight: 600;
+            }
 
             .cop-price-single-size {
                 white-space: nowrap;
@@ -224,9 +277,18 @@
 }
 
 .other-item-type {
+    // Grid
+    display: grid;
+    gap: 1rem;
+
     h2 {
 
     }
+
+    > *:not(h2) {
+        padding-left: 3ch;
+    }
+
     .other-item, .other-item-with-ingredients {
         // Grid
         display: grid;
@@ -241,8 +303,23 @@
         }
     }
     .other-item-with-ingredients {
+        row-gap: 1rem;
+
         .other-item-ingredients {
+            // Grid
             grid: 2 / 1 / 3 / 3;
         }
     }
+}
+
+.gluten-free-crust-container, 
+.hours-container,
+.tagline-container,
+.menu-misc-data-item {
+    font-size: 120%;
+    text-align: center;
+    // Grid
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
 }

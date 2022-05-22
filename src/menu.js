@@ -1,20 +1,22 @@
 import menuData from './data/menu.json';
 import { createElement } from './utilities.js';
 import './menu.scss';
+import createLogoImgWithSrcset from './logo-img-srcset.js';
 import MenuLogo from './img/titulo_menu.png';
 import Logo from './img/logo.png';
 import CreateOwnPizzaLogo from './img/titulo_menu2.png';
 import menuPDF from './data/menu.pdf';
 
 export default function Menu() {
-    let pageSelected = 1;
+    let _pageSelected = 1;
+    let _menuPagesElement = createElement('div', {id: 'menu-pages'});
 
     const _createPizzaElement = function(pizzaObj, number) {
         const pizzaElement = createElement('div', {'class': 'pizza-item'});
 
         // Number
         pizzaElement.appendChild(
-            createElement('div', {'class': 'pizza-item-number'}, number)
+            createElement('div', {'class': 'pizza-item-number white-text-shadow'}, number)
         );
 
         // Name
@@ -68,7 +70,7 @@ export default function Menu() {
 
     const _createOwnPizzaIngredientElement = function(ingredientType, ingredientList) {
         const ingredientElement = createElement('div', {'class': 'cop-ingredient'});
-        ingredientElement.appendChild(createElement('h2', {'class': 'cop-ingredient-type'}, ingredientType));
+        ingredientElement.appendChild(createElement('h2', {'class': 'cop-ingredient-type'}, `${ingredientType}:`));
         ingredientElement.appendChild(createElement('div', {'class': 'cop-ingredient-list'}, ingredientList));
         return ingredientElement;
     };
@@ -112,13 +114,16 @@ export default function Menu() {
         // Menu Logo
         menuPage.appendChild(createElement('img', {'src': MenuLogo, 'alt': 'Menu logo.', 'class': 'menu-logo'}));
 
-        let column = menuPage.appendChild(createElement('div', {'class': 'menu-column'}));
+        // Column Container
+        const columnContainer = menuPage.appendChild(createElement('div', {'class': 'menu-column-container'}));
+
+        let column = columnContainer.appendChild(createElement('div', {'class': 'menu-column'}));
 
         // Pizzas
         menuData.pizza.forEach((pizza, index) => {
             // Change to new column after twelve pizza types
             if (index === 12) {
-                column = menuPage.appendChild(createElement('div', {'class': 'menu-column'}));
+                column = columnContainer.appendChild(createElement('div', {'class': 'menu-column'}));
             }
             column.appendChild(_createPizzaElement(pizza, index + 1));
         });
@@ -173,8 +178,11 @@ export default function Menu() {
         // Menu Logo
         menuPage.appendChild(createElement('img', {'src': MenuLogo, 'alt': 'Menu logo.', 'class': 'menu-logo'}));
 
+        // Column Container
+        const columnContainer = menuPage.appendChild(createElement('div', {'class': 'menu-column-container'}));
+
         // First Column
-        let column = menuPage.appendChild(createElement('div', {'class': 'menu-column'}));
+        let column = columnContainer.appendChild(createElement('div', {'class': 'menu-column'}));
 
         // Other Items
         for (const [otherItemType, otherItemTypeArr] of Object.entries(menuData.otherItems)) {
@@ -201,10 +209,10 @@ export default function Menu() {
         ));
 
         // Second Column
-        column = menuPage.appendChild(createElement('div', {'class': 'menu-column'}));
+        column = columnContainer.appendChild(createElement('div', {'class': 'menu-column'}));
 
         // Logo
-        column.appendChild(createElement('img', {'src': Logo, 'alt': 'Corralitos Pizza logo.'}));
+        column.appendChild(createLogoImgWithSrcset());
 
         // Tagline
         column.appendChild(createElement(
@@ -252,60 +260,56 @@ export default function Menu() {
         return menuPage;
     };
 
-    const _createMenuPageButtons = function() {
+    const _createMenuPageButtons = function(bScrollToTop = false) {
         const btnContainer = createElement('div', {id: 'menu-page-btn-container'});
 
         // Page 1
-        let btn = btnContainer.appendChild(createElement('a', {'href': ''}));
+        let btn = createElement('a', {'href': ''});
         btn.addEventListener('click', e => {
             e.preventDefault();
-            pageSelected = 1;
+            _pageSelected = 1;
             _updateMenu();
+            if (bScrollToTop) _menuPagesElement.scrollIntoView({behavior: 'smooth'});
         }, false);
         btn.appendChild(createElement('span', {'class': 'white-text-shadow'}, 'Page 1'));
+        btnContainer.appendChild(createElement('div', {'class': 'menu-page-btn'}, btn));
 
         // Page 2
-        btn = btnContainer.appendChild(createElement('a', {href: ''}));
+        btn = createElement('a', {href: ''});
         btn.addEventListener('click', e => {
             e.preventDefault();
-            pageSelected = 2;
+            _pageSelected = 2;
             _updateMenu();
+            if (bScrollToTop) _menuPagesElement.scrollIntoView({behavior: 'smooth'});
         }, false);
         btn.appendChild(createElement('span', {'class': 'white-text-shadow'}, 'Page 2'));
+        btnContainer.appendChild(createElement('div', {'class': 'menu-page-btn'}, btn));
 
         // PDF
-        btn = btnContainer.appendChild(createElement('a', {href: menuPDF, target: '_blank'}));
+        btn = createElement('a', {href: menuPDF, target: '_blank'});
         btn.appendChild(createElement('span', {'class': 'white-text-shadow'}, 'PDF'));
+        btnContainer.appendChild(createElement('div', {'class': 'menu-page-btn'}, btn));
 
         return btnContainer;
     };
 
     const _updateMenu = function() {
-        const element = document.querySelector('.menu-page-single');
-
-        switch(pageSelected) {
-            case 2:
-                element.replaceWith(_createSecondPage());
-                break;
-            default: // Show first page by default
-                element.replaceWith(_createFirstPage());
-        }
+        _menuPagesElement.dataset.pageDisplayed = _pageSelected === 2 ? '2' : '1';
     };
 
     const render = function() {
         const element = createElement('main');
 
-        // Menu Page Buttons
+        // Menu Page Buttons - Top
         element.appendChild(_createMenuPageButtons());
 
         // Menu Page
         // menu-page-container -> menu-pages -> menu-page
-        element.appendChild(createElement('div', {id: 'menu-page-container'}, 
-            createElement('div', {id: 'menu-pages'}, 
-                pageSelected === 2 ? _createSecondPage() : _createFirstPage(),
-                pageSelected === 2 ? _createFirstPage() : _createSecondPage()
-            )
-        ));
+        _menuPagesElement.append(_createFirstPage(), _createSecondPage());
+        element.appendChild(createElement('div', {id: 'menu-page-container'}, _menuPagesElement));
+
+        // Menu Page Buttons - Bottom
+        element.appendChild(_createMenuPageButtons(true));
         
         return element;
     };
