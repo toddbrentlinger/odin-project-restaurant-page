@@ -1,7 +1,19 @@
+#animated-logo-container {
+    flex: 1;
+    width: 100%;
+}
+
 #animated-logo {
     position: relative;
-    height: 406px;
-    width: 606px;
+    // height: 406px;
+    // width: 606px;
+    height: 100%;
+
+    > img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
 
     > * {
         position: absolute;
@@ -11,10 +23,15 @@
     }
 
     .animated-logo-back {
-        --logo-back-height-percentage: 70%;
+        --logo-back-height-ratio: 0.7;
 
-        height: var(--logo-back-height-percentage);
+        height: calc(var(--logo-back-height-ratio) * 100%);
         overflow: hidden;
+
+        img {
+            height: calc(1 / var(--logo-back-height-ratio) * 100%);
+            margin: 0 auto;
+        }
 
         > * {
             position: absolute;

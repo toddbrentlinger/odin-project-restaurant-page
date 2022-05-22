@@ -25,7 +25,7 @@ export default function AnimatedLogoComponent() {
 
         animatedLogoElement.appendChild(_createImgElement(logoTextSign, '', 'logo-text-sign'));
 
-        return animatedLogoElement;
+        return createElement('div', {id: 'animated-logo-container'}, animatedLogoElement);
     };
 
     return {render,};
