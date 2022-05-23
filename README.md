@@ -1,8 +1,8 @@
 <h1 align="center">Restaurant Page: Corralitos Pizza</h1>
 
 <p align="center">
-    <a href="https://toddbrentlinger.github.io/odin-project-restaurant-page/dist/">
-        <img src="https://toddbrentlinger.github.io/odin-project-restaurant-page/dist/favicon/android-chrome-192x192.png" width="25%" alt="Corralitos Pizza restaurant page logo icon."/>
+    <a href="https://toddbrentlinger.github.io/odin-project-restaurant-page/">
+        <img src="https://toddbrentlinger.github.io/odin-project-restaurant-page/favicon/android-chrome-192x192.png" width="25%" alt="Corralitos Pizza restaurant page logo icon."/>
         <div align="center">Click to see it in action!</div>
     </a>
 </p>
@@ -16,6 +16,8 @@ Restaurant page for Corralitos Pizza with some inspiration from their existing w
 - Single page application
 
 > Each tab of the website updates the page through JavaScript rather than loading a separate page.
+
+- Responsive
 
 ### Home
 

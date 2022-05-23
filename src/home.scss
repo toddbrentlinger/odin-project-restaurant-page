@@ -2,15 +2,13 @@
     text-align: center;
     font-size: 3rem;
     font-weight: 600;
-    // Grid
-    display: grid;
-    grid-template-columns: min-content;
 
     p:first-of-type {
         text-transform: uppercase;
     }
 
-    > *:not(p:last-of-type) {
-        white-space: nowrap;
+    p:last-of-type {
+        max-width: 30ch;
+        margin: 0 auto;
     }
 }

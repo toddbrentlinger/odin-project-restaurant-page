@@ -67,8 +67,7 @@
 
 #menu-page-container {
     margin: 1rem auto;
-    max-width: 150ch;
-    // width: 80%;
+    max-width: 120ch;
     perspective: 500vw;
 }
 
@@ -126,7 +125,7 @@
     .menu-column-container {
         // Grid
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
         column-gap: 2rem;
     }
 
